@@ -1,0 +1,19 @@
+#%YAML 1.2.2
+---
+fruits:
+  - Apple
+  - Watermellon
+  - Cherry
+vegetables:
+  - Green Bean
+  - Spinach
+...
+---
+vehicles:
+  - truck
+  - van
+  - airplane
+fuels:
+  - diesel
+  - gasoline
+...
