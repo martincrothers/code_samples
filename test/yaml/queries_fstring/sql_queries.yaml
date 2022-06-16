@@ -1,3 +1,4 @@
+# This query is used simply to validate successful connection of the SWIS service
 sql_connection_test:
   powershell: |-
     SELECT TOP (10)
@@ -18,6 +19,7 @@ sql_connection_test:
       {database_name} = Database Name
     */
 
+# Used for assigning a Custom Poller (Device Studio, not UnDP (Universal Device Poller))
 poller_assignment:
   powershell: |-
     UPDATE [{0}].[dbo].[DeviceStudio_PollerAssignments]
