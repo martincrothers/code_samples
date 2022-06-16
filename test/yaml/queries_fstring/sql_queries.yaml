@@ -1,0 +1,55 @@
+sql_connection_test:
+  powershell: |-
+    SELECT TOP (10)
+    [IP_Address]
+    ,[Caption]
+    FROM [{0}].[dbo].[NodesData]
+    /*
+      Arguments:
+      0 = Database Name
+    */
+  python: |-
+    SELECT TOP (10)
+    [IP_Address]
+    ,[Caption]
+    FROM [{database_name}].[dbo].[NodesData]
+    /*
+      Arguments:
+      {database_name} = Database Name
+    */
+
+poller_assignment:
+  powershell: |-
+    UPDATE [{0}].[dbo].[DeviceStudio_PollerAssignments]
+    SET [Enabled] = {1}
+    WHERE [ID] IN (
+      SELECT PA.ID
+      FROM [{0}].[dbo].[DeviceStudio_PollerAssignments] PA
+      INNER JOIN [{0}].[dbo].[DeviceStudio_Pollers] P
+      ON PA.PollerID = P.PollerID
+      WHERE P.Name = '{2}' AND PA.NetObjectType = 'N' AND PA.NetObjectID = {3}
+    );
+    /*
+      Arguments:
+      0 = Database Name for NPM Database
+      1 = 0 or 1: True/False for [Enabled] (Can be NULL)
+      2 = Name of poller template
+      3 = NodeID
+    */
+  python: |-
+    UPDATE [{database_name}].[dbo].[DeviceStudio_PollerAssignments]
+    SET [Enabled] = {enabled}
+    WHERE [ID] IN (
+      SELECT PA.ID
+      FROM [{database_name}].[dbo].[DeviceStudio_PollerAssignments] PA
+      INNER JOIN [{database_name}].[dbo].[DeviceStudio_Pollers] P
+      ON PA.PollerID = P.PollerID
+      WHERE P.Name = '{device_studio_poller_template}' AND PA.NetObjectType = 'N' AND PA.NetObjectID = {node_id}
+    );
+    /*
+      Arguments:
+      {database_name} = Database Name for NPM Database
+      {enabled} = 0 or 1: True/False for [Enabled] (Can be NULL)
+      {device_studio_poller_template} = Name of poller template
+      {node_id} = NodeID
+    */
