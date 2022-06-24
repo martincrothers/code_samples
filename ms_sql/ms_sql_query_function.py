@@ -22,15 +22,22 @@ def sql_query(username, password, sql_server, database, query):
     return df
 
 
-user = r'lab\martin'
-password = r'P@ssw0rd'
-sql_host = r'oriondb\orionprod'
-database = 'SolarWindsOrion'
-query = "SELECT TOP 3 NodeID, Caption, IP_Address FROM [{}].[dbo].[NodesData]".format(database)
+###############################################################################
+#   Call the function
+###############################################################################
+def main():
+    user = r'lab\martin'
+    password = r'P@ssw0rd'
+    sql_host = r'oriondb\orionprod'
+    database = 'SolarWindsOrion'
+    query = "SELECT TOP 3 NodeID, Caption, IP_Address FROM [{}].[dbo].[NodesData]".format(database)
+    results = sql_query(user, password, sql_host, database, query)
+    display(results)
 
 
-results = sql_query(user, password, sql_host, database, query)
-display(results)
+if __name__ == "__main__":
+    main()
+
 
 """
     The printed results look like:
