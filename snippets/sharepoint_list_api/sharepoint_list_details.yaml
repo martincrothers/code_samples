@@ -1,0 +1,4 @@
+sharepoint_base_url_python: https://sharepoint.lab.martincrothers.com/ExampleSite/_api/Web/Lists/GetByTitle('{}')/items?
+sharepoint_base_url_powershell: 'https://sharepoint.lab.martincrothers.com/ExampleSite/_api/Web/Lists/GetByTitle(''{0}'')/items?'
+sharepoint_list_name: SupportTeamContacts
+sharepoint_list_query: '$select=Title,email_address,incident_queue&$filter=(Title eq ''Network Team'')'
