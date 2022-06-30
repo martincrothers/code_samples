@@ -50,7 +50,9 @@ The included code includes a filter to filter the results down to a single entry
 ## Python
 The data is returned as JSON, and can be parsed as a dictionary.
 ```python
-['d']['results'][0]['Title']
+['d']['results'][0]['email_address']
+
+# From the code sample, this will output the string "network.team@lab.martincrothers.com"
 ```
 
 ## PowerShell
