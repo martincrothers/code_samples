@@ -2,9 +2,9 @@
 This snippet demonstrates the querying of a SharePoint list over the API for on-prem SharePoint
 
 ## SharePoint Data Structure
-The included code includes a filter to filter the results down to a single entry from the list. Below I show the data structure for a few entries so that you can see how it's navigated.
+The included code includes a filter to filter the results down to a single entry from the list. Since we can't perform this live, below I show the data structure for a few entries so that you can see how it's navigated.
 
-```
+```json
 {
 	"d": {
 		"results": [
@@ -47,8 +47,10 @@ The included code includes a filter to filter the results down to a single entry
 }
 ```
 
-
-
 ## Python
+The data is returned as JSON, and can be parsed as a dictionary.
+```python
+['d']['results'][0]['Title']
+```
 
 ## PowerShell
