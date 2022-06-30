@@ -52,7 +52,9 @@ The data is returned as JSON, and can be parsed as a dictionary.
 ```python
 ['d']['results'][0]['email_address']
 
-# From the code sample, this will output the string "network.team@lab.martincrothers.com"
+"""
+From the code sample, this will output the string "network.team@lab.martincrothers.com"
+"""
 ```
 
 ## PowerShell
