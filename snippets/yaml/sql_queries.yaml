@@ -2,8 +2,8 @@
 sql_connection_test:
   powershell: |-
     SELECT TOP (10)
-    [IP_Address]
-    ,[Caption]
+      [IP_Address]
+    , [Caption]
     FROM [{0}].[dbo].[NodesData]
     /*
       Arguments:
@@ -11,8 +11,8 @@ sql_connection_test:
     */
   python: |-
     SELECT TOP (10)
-    [IP_Address]
-    ,[Caption]
+      [IP_Address]
+    , [Caption]
     FROM [{database_name}].[dbo].[NodesData]
     /*
       Arguments:
