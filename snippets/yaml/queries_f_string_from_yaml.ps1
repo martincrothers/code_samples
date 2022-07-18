@@ -6,22 +6,22 @@
 
 	Resulting in this:
 		SELECT TOP (10)
-		[IP_Address]
-		,[Caption]
+		  [IP_Address]
+		, [Caption]
 		FROM [{0}].[dbo].[NodesData]
 		/*
-		Arguments:
-		0 = Database Name
+		  Arguments:
+		  0 = Database Name
 		*/
 
 	Turning into this:
 		SELECT TOP (10)
-		[IP_Address]
-		,[Caption]
+		  [IP_Address]
+		, [Caption]
 		FROM [SolarWindsOrion].[dbo].[NodesData]
 		/*
-		Arguments:
-		0 = Database Name
+		  Arguments:
+		  0 = Database Name
 		*/
 #>
 
