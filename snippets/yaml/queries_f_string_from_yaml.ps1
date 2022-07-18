@@ -1,3 +1,30 @@
+<#
+	This PowerShell sample will convert the "sql_queries.yaml" file into an PowerShell Object,
+	then parse it to the location:
+		sql_connection_test → powershell
+	and then inserts the value of the variable $Database_Name into the placeholder "0".
+
+	Resulting in this:
+		SELECT TOP (10)
+		[IP_Address]
+		,[Caption]
+		FROM [{0}].[dbo].[NodesData]
+		/*
+		Arguments:
+		0 = Database Name
+		*/
+
+	Turning into this:
+		SELECT TOP (10)
+		[IP_Address]
+		,[Caption]
+		FROM [SolarWindsOrion].[dbo].[NodesData]
+		/*
+		Arguments:
+		0 = Database Name
+		*/
+#>
+
 Import-Module powershell-yaml
 
 #	The YAML file in this directory
