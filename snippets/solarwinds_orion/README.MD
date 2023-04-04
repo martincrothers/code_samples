@@ -1,0 +1,2 @@
+# Details about the SolarWinds Orion Instance Connect to
+The queries and functions demonstrated here return the details about the SolarWinds Orion instance/environment that the ```Connect-Swis``` function connects to.
