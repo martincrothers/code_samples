@@ -1,3 +1,5 @@
+# This requires the module ActiveDirectory: https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2025-ps
+
 $Username = "domain\user"
 $Password_Old = "oldP@ssw0rd" | ConvertTo-SecureString -AsPlainText -Force
 $Password_New = "newP@ssw0rd" | ConvertTo-SecureString -AsPlainText -Force
